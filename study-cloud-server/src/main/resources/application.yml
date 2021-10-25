@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: producer-service
+
+#spring.sleuth.log.slf4j.enabled: false
+
+management:
+  server:
+    port: 59002
+    address: localhost
+  #  endpoint:
+  #   shutdown:
+  #    enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    # 是否需要从服务治理服务器同步已注册的服务列表
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+server:
+  port: 9002
+
+
+
+

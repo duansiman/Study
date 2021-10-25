@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: eurake-client
+  #  datasource:
+  #    url: jdbc:mysql://192.168.157.131:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+  #    username: root
+  #    password: 123456
+  #    driver-class-name: com.mysql.jdbc.Driver
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc\:h2\:mem\:testdb;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        enable_lazy_load_no_trans: true
+        physical_naming_strategy: com.epdc.common.NamingStrategy
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+    database: h2
+
+
+logging:
+  path: logs/
+  level:
+    com:
+      favorites: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+
+server:
+  port: 9001

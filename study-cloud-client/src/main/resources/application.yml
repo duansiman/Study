@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: consumer-service
+  datasource:
+    url: jdbc:mysql://192.168.157.131:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+
+management:
+  server:
+    port: 59001
+    address: localhost
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+eureka:
+  instance:
+    hostname: localhost
+  #    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    #    是否需要从服务治理服务器同步已注册的服务列表
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+server:
+  port: 9001
+
+logging.config: classpath:log4j2.xml
+
+
+
+
