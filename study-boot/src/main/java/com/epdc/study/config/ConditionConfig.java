@@ -1,12 +1,13 @@
 package com.epdc.study.config;
 
-import com.epdc.study.condition.EnvPropertiesCondition;
 import com.epdc.study.service.HelloService;
 import com.epdc.study.service.impl.JackHelloService;
 import com.epdc.study.service.impl.RoseHelloService;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
-@Configuration
+//@Configuration
 public class ConditionConfig {
 
     @Bean

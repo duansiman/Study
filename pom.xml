@@ -18,6 +18,7 @@
     <module>study-netty-client</module>
     <module>study-netty-server</module>
     <module>study-leetcode</module>
+      <module>maven</module>
   </modules>
 
   <name>study</name>

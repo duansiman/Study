@@ -1,7 +1,7 @@
 package com.epdc.study.repository;
 
-import org.springframework.stereotype.Component;
+import com.epdc.study.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Component
-public interface StudentRepository /*extends JpaRepository<Student, Long>*/ {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 }

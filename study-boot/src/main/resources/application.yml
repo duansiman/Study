@@ -1,36 +1,62 @@
 spring:
+  config:
+    activate:
+      on-profile: dev
   application:
-    name: eurake-client
-  #  datasource:
-  #    url: jdbc:mysql://192.168.157.131:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
-  #    username: root
-  #    password: 123456
-  #    driver-class-name: com.mysql.jdbc.Driver
+    name: study-boot
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc\:h2\:mem\:testdb;DB_CLOSE_DELAY=-1;
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc\:h2\:mem\:testdb;DB_CLOSE_DELAY=-1;
+#    username:
+#    password:
+#    hikari:
+#      minimum-idle: 5
+#      maximum-pool-size: 20
+#      auto-commit: true
+#      idle-timeout: 30000
+#      pool-name: MysqlHikariCP
+#      max-lifetime: 1800000
+#      connection-timeout: 10000
+#      connection-test-query: SELECT 1
 
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
 
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        enable_lazy_load_no_trans: true
-        physical_naming_strategy: com.epdc.common.NamingStrategy
-    show-sql: true
-    open-in-view: true
-    hibernate:
-      ddl-auto: none
-    database: h2
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+#          auto: update
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        enable_lazy_load_no_trans: true
+#        physical_naming_strategy: com.epdc.common.NamingStrategy
+#    show-sql: true
+#    open-in-view: true
+#    hibernate:
+#      ddl-auto: none
+#    database: h2
 
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+#    password:
+#    ssl:
+#    timeout:
+#    connectTimeout:
+#    clientName:
+#    cluster:
+#      nodes:
+#    sentinel:
+#      master:
+#      nodes:
 
 logging:
   path: logs/
